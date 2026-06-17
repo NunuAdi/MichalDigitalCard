@@ -15,7 +15,8 @@
       stat2: 'חשיפות חודשיות',
       stat3: 'מותגים מרוצים',
       ctaTitle: 'בואו נתחיל לדבר!',
-      ctaWhatsapp: 'דברו איתי בוואטסאפ',
+      ctaWhatsapp: 'WhatsApp',
+      emailCopied: 'מייל הועתק בהצלחה! ✨',
       waMessage: 'היי מיכל !\nראיתי את הכרטיס הדיגיטלי שלך ואשמח לשוחח על שיתוף פעולה. ✨',
       advantages: [
         {
@@ -78,6 +79,7 @@
       stat3: 'Happy Brands',
       ctaTitle: "Let's Start Talking!",
       ctaWhatsapp: 'Chat on WhatsApp',
+      emailCopied: 'Email copied! ✨',
       waMessage: "Hi Michal!\nI saw your digital card and I'd love to discuss a collaboration. ✨",
       advantages: [
         {
@@ -146,9 +148,52 @@
   const modalTitle = document.getElementById('modalTitle');
   const modalBadge = document.getElementById('modalBadge');
   const modalClose = document.getElementById('modalClose');
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  const toastNotification = document.getElementById('toast-notification');
+  let toastTimeout = null;
 
   function buildWhatsAppUrl(message) {
     return 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(message);
+  }
+
+  function showEmailToast() {
+    toastNotification.textContent = i18n[currentLang].emailCopied;
+    toastNotification.classList.add('toast-show');
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(function () {
+      toastNotification.classList.remove('toast-show');
+    }, 2500);
+  }
+
+  function copyEmailToClipboard() {
+    const email = copyEmailBtn.getAttribute('data-email');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(showEmailToast).catch(function (err) {
+        console.error('Could not copy email: ', err);
+        fallbackCopyEmail(email);
+      });
+    } else {
+      fallbackCopyEmail(email);
+    }
+  }
+
+  function fallbackCopyEmail(email) {
+    const textarea = document.createElement('textarea');
+    textarea.value = email;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      showEmailToast();
+    } catch (err) {
+      console.error('Could not copy email: ', err);
+    }
+    document.body.removeChild(textarea);
   }
 
   function updateWhatsAppLinks() {
@@ -226,7 +271,19 @@
     renderAdvantages();
     updateWhatsAppLinks();
 
+    if (!toastNotification.classList.contains('toast-show')) {
+      toastNotification.textContent = t.emailCopied;
+    }
+
     try { localStorage.setItem('michal-lang', lang); } catch (e) {}
+  }
+
+  function optimizeCloudinaryUrl(url) {
+    var videoUrl = url;
+    if (videoUrl.includes('cloudinary.com') && videoUrl.includes('/upload/') && !videoUrl.includes('f_auto')) {
+      videoUrl = videoUrl.replace('/upload/', '/upload/f_auto,q_auto/');
+    }
+    return videoUrl;
   }
 
   function openModal() {
@@ -235,7 +292,7 @@
 
     modalTitle.textContent = project.brand;
     modalBadge.textContent = project.badge;
-    modalVideo.src = project.video;
+    modalVideo.src = optimizeCloudinaryUrl(project.video);
     modalVideo.load();
 
     videoModal.classList.add('active');
@@ -269,6 +326,8 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && videoModal.classList.contains('active')) closeModal();
   });
+
+  copyEmailBtn.addEventListener('click', copyEmailToClipboard);
 
   var saved = null;
   try { saved = localStorage.getItem('michal-lang'); } catch (e) {}
