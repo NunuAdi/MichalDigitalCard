@@ -6,11 +6,11 @@
   const i18n = {
     he: {
       name: 'מיכל נונו',
-      title: 'מנהלת סושיאל ומייצרת תוכן למותגים',
-      tagline: 'עוזרת למותגים לספר סיפורים, להגיע לקהלי יעד וליצור שיתופי פעולה שמניבים תוצאות אמיתיות.',
-      about: 'מומחית באסטרטגיה דיגיטלית, יצירת תוכן ויראלי וייצור וידאו באיכות גבוהה - Reels, TikTok וקמפיינים שמניעים צמיחה, מעורבות ומכירות.',
+      title: 'יצירת תוכן & UGC | אסטרטגיה דיגיטלית',
+      about_tagline: 'אז היי! נעים להכיר, שמי מיכל נונו, בת 25. חיה ונושמת את הרשתות החברתיות, אוהבת ועושה את העבודה שלי על הצד הטוב ביותר !',
+      about_desc: 'אני מאמינה שבעולם של היום, אנשים לא קונים רק ממותגים - הם קונים בעיקר מאנשים. המשימה שלי היא לייצר עבורכם תוכן אותנטי, כזה שמרגיש כמו המלצה חמה מחברה טובה, תוך שילוב של אסתטיקה בלתי מתפשרת ואסטרטגיה שיווקית שמניעה לפעולה. אני כאן כדי להפוך את הסיפור של המותג שלכם לסרטון שאי אפשר להפסיק לצפות בו.',
       portfolioTitle: 'תיק העבודות שלי',
-      whyTitle: 'למה לעבוד איתי?',
+      advantages_title: 'למה לעבוד איתי?',
       stat1: 'סה"כ עוקבים',
       stat2: 'חשיפות חודשיות',
       stat3: 'מותגים מרוצים',
@@ -18,10 +18,22 @@
       ctaWhatsapp: 'דברו איתי בוואטסאפ',
       waMessage: 'היי מיכל !\nראיתי את הכרטיס הדיגיטלי שלך ואשמח לשוחח על שיתוף פעולה. ✨',
       advantages: [
-        'חדשנות ויצירתיות - תוכן שבולט ומדבר אל הקהל',
-        'עמידה קפדנית בדדליינים וניהול פרויקטים מקצועי',
-        'מעקב עמוק אחרי טרנדים ופלטפורמות חדשות',
-        'התאמה מלאה לערכי המותג ולקהל היעד'
+        {
+          title: 'הפקת סרטוני וידאו',
+          desc: 'יצירת וידאו קריאייטיבי ומותאם למותג ברשתות החברתיות (Reels & TikTok).'
+        },
+        {
+          title: 'כתיבת תסריטים שיווקיים',
+          desc: 'פיתוח קונספטים ותסריטים יצירתיים שמחברים את הקהל ומניעים למכירה.'
+        },
+        {
+          title: 'שיתופי פעולה ו-UGC',
+          desc: 'יצירת תוכן בגובה העיניים עם מגוון רחב של חברות ומותגים מובילים.'
+        },
+        {
+          title: 'אסטרטגיה ואסתטיקה',
+          desc: 'שילוב מדויק בין מראה ויזואלי יוקרתי לבין תוצאות שיווקיות בשטח.'
+        }
       ],
       projects: [
         {
@@ -56,11 +68,11 @@
     },
     en: {
       name: 'Michal Nunu',
-      title: 'Social Media Manager & Brand Partnerships',
-      tagline: 'Helping brands tell stories, reach target audiences, and create collaborations that drive real results.',
-      about: 'Expert in digital strategy, viral content creation, and high-impact video production - Reels, TikTok, and campaigns that drive growth, engagement, and sales.',
+      title: 'UGC & Content Creator | Digital Strategy',
+      about_tagline: "Hi! Nice to meet you, I'm Michal Nono, 25. I live and breathe social media, and I'm dedicated to delivering my absolute best work!",
+      about_desc: "I truly believe that in today's world, people don't just buy from brands - they buy from people. My mission is to create authentic content for you that feels like a warm recommendation from a close friend, blending uncompromising aesthetics with action-driven marketing strategies. I am here to turn your brand's story into a video people just can't stop watching.",
       portfolioTitle: 'My Portfolio',
-      whyTitle: 'Why Work With Me?',
+      advantages_title: 'Why Work With Me?',
       stat1: 'Total Audience',
       stat2: 'Monthly Exposures',
       stat3: 'Happy Brands',
@@ -68,10 +80,22 @@
       ctaWhatsapp: 'Chat on WhatsApp',
       waMessage: "Hi Michal!\nI saw your digital card and I'd love to discuss a collaboration. ✨",
       advantages: [
-        'Innovation & Creativity - content that stands out and resonates',
-        'Strict deadline adherence & professional project management',
-        'In-depth trend tracking across platforms',
-        'Full alignment with brand values and target audience'
+        {
+          title: 'Video Production',
+          desc: 'Creating creative, tailor-made social media videos (Reels & TikTok).'
+        },
+        {
+          title: 'Marketing Scriptwriting',
+          desc: 'Developing engaging scripts and concepts that drive connections and sales.'
+        },
+        {
+          title: 'UGC & Partnerships',
+          desc: 'Crafting relatable, authentic content for a wide range of leading brands.'
+        },
+        {
+          title: 'Strategy & Aesthetics',
+          desc: 'Perfectly balancing high-end visual appeal with real-world marketing results.'
+        }
       ],
       projects: [
         {
@@ -167,11 +191,14 @@
 
   function renderAdvantages() {
     const items = i18n[currentLang].advantages;
-    advantagesGrid.innerHTML = items.map(function (text, i) {
+    advantagesGrid.innerHTML = items.map(function (item, i) {
       return (
         '<div class="advantage-card">' +
           '<div class="advantage-icon">' + advantageIcons[i] + '</div>' +
-          '<p class="advantage-text">' + text + '</p>' +
+          '<div class="advantage-content">' +
+            '<h3 class="advantage-title">' + item.title + '</h3>' +
+            '<p class="advantage-desc">' + item.desc + '</p>' +
+          '</div>' +
         '</div>'
       );
     }).join('');

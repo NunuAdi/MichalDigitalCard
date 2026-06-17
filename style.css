@@ -398,6 +398,9 @@ body {
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
   transform: scale(0.9) translateY(20px);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-overlay.active .modal-content {
@@ -410,6 +413,8 @@ body {
   justify-content: space-between;
   padding: 16px 18px;
   border-bottom: 1px solid var(--pink-100);
+  width: 100%;
+  align-self: stretch;
 }
 
 .modal-title {
@@ -446,21 +451,35 @@ body {
 
 .modal-video-wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  align-self: stretch;
   background: var(--dark);
   aspect-ratio: 9 / 16;
   max-height: 70vh;
+  direction: ltr;
+  overflow: hidden;
 }
 
 .modal-video-wrap video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 70vh;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .modal-meta {
   padding: 14px 18px 18px;
   text-align: center;
+  width: 100%;
+  align-self: stretch;
 }
 
 .modal-badge {
@@ -521,17 +540,29 @@ body {
   stroke-width: 2;
 }
 
-.advantage-text {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--dark-soft);
+.advantage-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.advantage-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.advantage-desc {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
   line-height: 1.45;
-  padding-top: 2px;
 }
 
 /* ── Stats ── */
 .stats-section {
-  padding: 36px 16px;
+  padding: 40px 18px;
   background: linear-gradient(180deg, #fdf0f4 0%, #fff8fa 55%, var(--white) 100%);
   border-top: 1px solid rgba(232, 180, 200, 0.22);
   border-bottom: 1px solid rgba(232, 180, 200, 0.12);
@@ -541,16 +572,16 @@ body {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 14px;
   text-align: center;
 }
 
 .stat-item {
-  padding: 12px 6px;
+  padding: 14px 8px;
 }
 
 .stat-value {
-  font-size: clamp(1.4rem, 5vw, 1.75rem);
+  font-size: clamp(1.75rem, 6.5vw, 2.15rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -570,10 +601,10 @@ body {
 }
 
 .stat-label {
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: #5c4a52;
-  margin-top: 8px;
+  margin-top: 10px;
   line-height: 1.35;
 }
 
@@ -712,11 +743,13 @@ body {
 }
 
 /* ── RTL / LTR Logical Adjustments ── */
-[dir="rtl"] .advantage-card {
+[dir="rtl"] .advantage-card,
+[dir="rtl"] .advantage-content {
   text-align: right;
 }
 
-[dir="ltr"] .advantage-card {
+[dir="ltr"] .advantage-card,
+[dir="ltr"] .advantage-content {
   text-align: left;
 }
 
@@ -746,11 +779,11 @@ body {
   }
 
   .stats-grid {
-    gap: 4px;
+    gap: 8px;
   }
 
   .stat-label {
-    font-size: 0.62rem;
+    font-size: 0.7rem;
   }
 }
 
