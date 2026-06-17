@@ -126,13 +126,13 @@ body {
   height: 152px;
   margin: 0 auto 22px;
   position: relative;
+  direction: ltr;
 }
 
 .avatar-ring {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
-  padding: 5px;
   background: conic-gradient(
     from 0deg,
     #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #833ab4, #5851db, #405de6, #f09433
@@ -141,29 +141,39 @@ body {
   box-shadow: 0 0 28px var(--pink-glow), 0 0 56px rgba(188, 24, 136, 0.18);
 }
 
+.avatar-ring::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--white);
+}
+
 @keyframes ring-spin {
   to { transform: rotate(360deg); }
 }
 
 .avatar-inner {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 5px;
+  width: auto;
+  height: auto;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--pink-100) 0%, var(--pink-200) 100%);
   border: 4px solid var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  animation: ring-spin 4s linear infinite reverse;
+  z-index: 1;
 }
 
 .avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20%;
   display: block;
+  transform: scale(1.40) !important;
 }
 
 .profile-name {
