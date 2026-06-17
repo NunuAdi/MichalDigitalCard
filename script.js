@@ -55,7 +55,7 @@
       ]
     },
     en: {
-      name: 'Michal Nono',
+      name: 'Michal Nunu',
       title: 'Social Media Manager & Brand Partnerships',
       tagline: 'Helping brands tell stories, reach target audiences, and create collaborations that drive real results.',
       about: 'Expert in digital strategy, viral content creation, and high-impact video production - Reels, TikTok, and campaigns that drive growth, engagement, and sales.',
@@ -184,7 +184,7 @@
 
     document.documentElement.lang = lang;
     document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
-    document.title = isRtl ? 'מיכל נונו | כרטיס דיגיטלי' : 'Michal Nono | Digital Business Card';
+    document.title = isRtl ? 'מיכל נונו | כרטיס דיגיטלי' : 'Michal Nunu | Digital Business Card';
 
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       const key = el.getAttribute('data-i18n');
