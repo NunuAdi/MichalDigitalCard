@@ -15,11 +15,8 @@
       stat2: 'חשיפות חודשיות',
       stat3: 'מותגים מרוצים',
       ctaTitle: 'בואו נתחיל לדבר!',
-      ctaWhatsapp: 'וואטסאפ',
-      ctaConsult: 'לקביעת שיחת ייעוץ',
-      floatWhatsapp: 'דברו איתי בוואטסאפ',
+      ctaWhatsapp: 'דברו איתי בוואטסאפ',
       waMessage: 'היי מיכל !\nראיתי את הכרטיס הדיגיטלי שלך ואשמח לשוחח על שיתוף פעולה. ✨',
-      consultMessage: 'היי מיכל! אשמח לקבוע שיחת ייעוץ.',
       advantages: [
         'חדשנות ויצירתיות - תוכן שבולט ומדבר אל הקהל',
         'עמידה קפדנית בדדליינים וניהול פרויקטים מקצועי',
@@ -68,11 +65,8 @@
       stat2: 'Monthly Exposures',
       stat3: 'Happy Brands',
       ctaTitle: "Let's Start Talking!",
-      ctaWhatsapp: 'WhatsApp',
-      ctaConsult: 'Book a Consultation',
-      floatWhatsapp: 'Chat on WhatsApp',
-      waMessage: "Hi Michal! I saw your digital card and I'd love to discuss a collaboration.",
-      consultMessage: "Hi Michal! I'd like to book a consultation call.",
+      ctaWhatsapp: 'Chat on WhatsApp',
+      waMessage: "Hi Michal!\nI saw your digital card and I'd love to discuss a collaboration. ✨",
       advantages: [
         'Innovation & Creativity - content that stands out and resonates',
         'Strict deadline adherence & professional project management',
@@ -135,11 +129,7 @@
 
   function updateWhatsAppLinks() {
     const t = i18n[currentLang];
-    const waUrl = buildWhatsAppUrl(t.waMessage);
-    const consultUrl = buildWhatsAppUrl(t.consultMessage);
-    document.getElementById('ctaWhatsapp').href = waUrl;
-    document.getElementById('ctaConsult').href = consultUrl;
-    document.getElementById('floatWhatsapp').href = waUrl;
+    document.getElementById('ctaWhatsapp').href = buildWhatsAppUrl(t.waMessage);
   }
 
   function renderPortfolio() {
