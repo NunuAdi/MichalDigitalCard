@@ -449,15 +449,17 @@ body {
 .modal-content {
   width: 100%;
   max-width: 400px;
-  background: var(--white);
-  border-radius: 20px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
   overflow: hidden;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
   transform: scale(0.9) translateY(20px);
   transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .modal-overlay.active .modal-content {
@@ -466,18 +468,26 @@ body {
 
 .modal-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--pink-100);
+  align-items: center;
   width: 100%;
-  align-self: stretch;
+  direction: rtl;
 }
 
 .modal-title {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--dark);
+  text-align: right;
+}
+
+[dir="ltr"] .modal-header {
+  direction: ltr;
+  flex-direction: row-reverse;
+}
+
+[dir="ltr"] .modal-title {
+  text-align: left;
 }
 
 .modal-close {
@@ -513,23 +523,20 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  align-self: stretch;
-  background: var(--dark);
+  background: #000000;
   aspect-ratio: 9 / 16;
   max-height: 70vh;
   direction: ltr;
+  border-radius: 16px;
   overflow: hidden;
 }
 
 .modal-video-wrap video {
-  display: block;
   width: 100%;
-  max-width: 100%;
-  height: auto;
+  display: block;
   max-height: 70vh;
-  margin: 0 auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 .modal-meta {

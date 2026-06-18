@@ -22,8 +22,7 @@
       ctaWhatsapp: 'WhatsApp',
       emailCopied: 'מייל הועתק בהצלחה! ✨',
       waMessage: 'היי מיכל !\nראיתי את הכרטיס הדיגיטלי שלך ואשמח לשוחח על שיתוף פעולה. ✨',
-      advantages: [
-        {
+      advantages: [{
           title: 'הפקת סרטוני וידאו',
           desc: 'יצירת וידאו קריאייטיבי ומותאם למותג ברשתות החברתיות (Reels & TikTok).'
         },
@@ -40,13 +39,12 @@
           desc: 'שילוב מדויק בין מראה ויזואלי יוקרתי לבין תוצאות שיווקיות בשטח.'
         }
       ],
-      projects: [
-        {
-          brand: 'בושם PARIS - מוצרי יוקרה',
+      projects: [{
+          brand: 'בושם DO SON',
           handle: '@Products',
           badge: '+30% מכירות',
           category: 'products',
-          thumb: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop',
+          thumb: './assets/DOSON.png',
           video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781762693/%D7%91%D7%95%D7%A9%D7%9D_PARIS_lsmalj.mp4'
         },
         {
@@ -54,34 +52,34 @@
           handle: '@Products',
           badge: '100K צפיות',
           category: 'products',
-          thumb: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop',
+          thumb: './assets/agalease-baby.png',
           video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728828/%D7%A2%D7%92%D7%9C%D7%99%D7%A1_-_%D7%98%D7%99%D7%95%D7%9C%D7%95%D7%9F_h7qnqq.mov'
-        },
-        {
-          brand: 'מפיץ ריח - A500',
-          handle: '@HomeCleaning',
-          badge: '+45% מעורבות',
-          category: 'products',
-          thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
-          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728774/A500_bqxi39.mov'
         },
         {
           brand: 'עגלת ציקו',
           handle: '@HomeCleaning',
           badge: '+45% מעורבות',
           category: 'products',
-          thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
+          thumb: './assets/chicco.png',
           video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728782/%D7%98%D7%99%D7%95%D7%9C%D7%95%D7%9F_%D7%9E%D7%91%D7%99%D7%AA_%D7%A6_%D7%99%D7%A7%D7%95_-_%D7%A2%D7%92%D7%9C%D7%99%D7%A1_b4nnuc.mov'
-        },,
+        },
+        {
+          brand: 'מפיץ ריח A500',
+          handle: '@HomeCleaning',
+          badge: '+45% מעורבות',
+          category: 'products',
+          thumb: './assets/johnsonclean.png',
+          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728774/A500_bqxi39.mov'
+        },
         {
           brand: 'The Pink Stuff',
           handle: '@HomeCleaning',
           badge: '+45% מעורבות',
           category: 'products',
-          thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
+          thumb: './assets/ThePinkStuff.png',
           video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728793/the_pink_stuff_-_%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F_%D7%9E%D7%A7%D7%9C%D7%97%D7%AA_zzjdva.mov'
         },
-        
+
       ]
     },
     en: {
@@ -102,8 +100,7 @@
       ctaWhatsapp: 'Chat on WhatsApp',
       emailCopied: 'Email copied! ✨',
       waMessage: "Hi Michal!\nI saw your digital card and I'd love to discuss a collaboration. ✨",
-      advantages: [
-        {
+      advantages: [{
           title: 'Video Production',
           desc: 'Creating creative, tailor-made social media videos (Reels & TikTok).'
         },
@@ -120,8 +117,7 @@
           desc: 'Perfectly balancing high-end visual appeal with real-world marketing results.'
         }
       ],
-      projects: [
-        {
+      projects: [{
           brand: 'LUXE Products Brand',
           handle: '@Products',
           badge: '+30% Sales',
@@ -180,7 +176,7 @@
   const videoModal = document.getElementById('videoModal');
   const modalVideo = document.getElementById('modalVideo');
   const modalTitle = document.getElementById('modalTitle');
-  const modalBadge = document.getElementById('modalBadge');
+  const modalBadge = document.getElementById('modalBadge'); // kept for easy badge restore
   const modalClose = document.getElementById('modalClose');
   const copyEmailBtn = document.getElementById('copy-email-btn');
   const toastNotification = document.getElementById('toast-notification');
@@ -293,19 +289,19 @@
     portfolioGrid.innerHTML = projects.map(function (p, i) {
       return (
         '<article class="portfolio-card" data-index="' + i + '" data-category="' + p.category + '" tabindex="0" role="button" aria-label="' + p.brand + '">' +
-          '<div class="card-thumb">' +
-            '<img src="' + optimizeCloudinaryUrl(p.thumb) + '" alt="' + p.brand + '" loading="lazy">' +
-            '<div class="card-play">' +
-              '<div class="card-play-icon">' +
-                '<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-          '<div class="card-body">' +
-            '<h3 class="card-brand">' + p.brand + '</h3>' +
-            '<span class="card-handle">' + p.handle + '</span>' +
-            '<span class="card-badge">' + p.badge + '</span>' +
-          '</div>' +
+        '<div class="card-thumb">' +
+        '<img src="' + optimizeCloudinaryUrl(p.thumb) + '" alt="' + p.brand + '" loading="lazy">' +
+        '<div class="card-play">' +
+        '<div class="card-play-icon">' +
+        '<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="card-body">' +
+        '<h3 class="card-brand">' + p.brand + '</h3>' +
+        '<span class="card-handle">' + p.handle + '</span>' +
+        // '<span class="card-badge">' + p.badge + '</span>' +
+        '</div>' +
         '</article>'
       );
     }).join('');
@@ -328,11 +324,11 @@
     advantagesGrid.innerHTML = items.map(function (item, i) {
       return (
         '<div class="advantage-card">' +
-          '<div class="advantage-icon">' + advantageIcons[i] + '</div>' +
-          '<div class="advantage-content">' +
-            '<h3 class="advantage-title">' + item.title + '</h3>' +
-            '<p class="advantage-desc">' + item.desc + '</p>' +
-          '</div>' +
+        '<div class="advantage-icon">' + advantageIcons[i] + '</div>' +
+        '<div class="advantage-content">' +
+        '<h3 class="advantage-title">' + item.title + '</h3>' +
+        '<p class="advantage-desc">' + item.desc + '</p>' +
+        '</div>' +
         '</div>'
       );
     }).join('');
@@ -360,7 +356,9 @@
     renderAdvantages();
     updateWhatsAppLinks();
 
-    try { localStorage.setItem('michal-lang', lang); } catch (e) {}
+    try {
+      localStorage.setItem('michal-lang', lang);
+    } catch (e) {}
   }
 
   function openModal() {
@@ -368,7 +366,7 @@
     const project = i18n[currentLang].projects[index];
 
     modalTitle.textContent = project.brand;
-    modalBadge.textContent = project.badge;
+    // modalBadge.textContent = project.badge; // Restore metric badge in modal when needed
     modalVideo.src = optimizeCloudinaryUrl(project.video);
     modalVideo.load();
 
@@ -405,7 +403,9 @@
   });
 
   var saved = null;
-  try { saved = localStorage.getItem('michal-lang'); } catch (e) {}
+  try {
+    saved = localStorage.getItem('michal-lang');
+  } catch (e) {}
   initPortfolioFilters();
   setLanguage(saved === 'en' ? 'en' : 'he');
 })();
