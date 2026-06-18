@@ -10,6 +10,10 @@
       about_tagline: 'אז היי! נעים להכיר, שמי מיכל נונו, בת 25. חיה ונושמת את הרשתות החברתיות, אוהבת ועושה את העבודה שלי על הצד הטוב ביותר !',
       about_desc: 'אני מאמינה שבעולם של היום, אנשים לא קונים רק ממותגים - הם קונים בעיקר מאנשים. המשימה שלי היא לייצר עבורכם תוכן אותנטי, כזה שמרגיש כמו המלצה חמה מחברה טובה, תוך שילוב של אסתטיקה בלתי מתפשרת ואסטרטגיה שיווקית שמניעה לפעולה. אני כאן כדי להפוך את הסיפור של המותג שלכם לסרטון שאי אפשר להפסיק לצפות בו.',
       portfolioTitle: 'תיק העבודות שלי',
+      filterAll: 'הכל',
+      filterProducts: 'מוצרים',
+      filterCleaning: 'ניקיון',
+      filterLifestyle: 'פנאי',
       advantages_title: 'למה לעבוד איתי?',
       stat1: 'סה"כ עוקבים',
       stat2: 'חשיפות חודשיות',
@@ -38,33 +42,46 @@
       ],
       projects: [
         {
-          brand: 'מותג אופנה LUXE',
-          handle: '@LuxeStyle',
+          brand: 'בושם PARIS - מוצרי יוקרה',
+          handle: '@Products',
           badge: '+30% מכירות',
-          thumb: 'https://images.unsplash.com/photo-1483985988355-763728ad1994?w=400&h=500&fit=crop',
-          video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
-        },
-        {
-          brand: 'ביוטי גלו GLOW',
-          handle: '@GlowBeauty',
-          badge: '100K צפיות',
+          category: 'products',
           thumb: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop',
-          video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
+          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781762693/%D7%91%D7%95%D7%A9%D7%9D_PARIS_lsmalj.mp4'
         },
         {
-          brand: 'קפה אורבן BREW',
-          handle: '@UrbanBrew',
+          brand: 'עגליס',
+          handle: '@Products',
+          badge: '100K צפיות',
+          category: 'products',
+          thumb: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop',
+          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728828/%D7%A2%D7%92%D7%9C%D7%99%D7%A1_-_%D7%98%D7%99%D7%95%D7%9C%D7%95%D7%9F_h7qnqq.mov'
+        },
+        {
+          brand: 'מפיץ ריח - A500',
+          handle: '@HomeCleaning',
           badge: '+45% מעורבות',
+          category: 'products',
           thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
-          video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
+          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728774/A500_bqxi39.mov'
         },
         {
-          brand: 'פוד קורנר FOOD',
-          handle: '@FoodCorner',
-          badge: '1M+ צפיות Reels',
-          thumb: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=500&fit=crop',
-          video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
-        }
+          brand: 'עגלת ציקו',
+          handle: '@HomeCleaning',
+          badge: '+45% מעורבות',
+          category: 'products',
+          thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
+          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728782/%D7%98%D7%99%D7%95%D7%9C%D7%95%D7%9F_%D7%9E%D7%91%D7%99%D7%AA_%D7%A6_%D7%99%D7%A7%D7%95_-_%D7%A2%D7%92%D7%9C%D7%99%D7%A1_b4nnuc.mov'
+        },,
+        {
+          brand: 'The Pink Stuff',
+          handle: '@HomeCleaning',
+          badge: '+45% מעורבות',
+          category: 'products',
+          thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
+          video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728793/the_pink_stuff_-_%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F_%D7%9E%D7%A7%D7%9C%D7%97%D7%AA_zzjdva.mov'
+        },
+        
       ]
     },
     en: {
@@ -73,6 +90,10 @@
       about_tagline: "Hi! Nice to meet you, I'm Michal Nono, 25. I live and breathe social media, and I'm dedicated to delivering my absolute best work!",
       about_desc: "I truly believe that in today's world, people don't just buy from brands - they buy from people. My mission is to create authentic content for you that feels like a warm recommendation from a close friend, blending uncompromising aesthetics with action-driven marketing strategies. I am here to turn your brand's story into a video people just can't stop watching.",
       portfolioTitle: 'My Portfolio',
+      filterAll: 'All',
+      filterProducts: 'Products',
+      filterCleaning: 'Cleaning',
+      filterLifestyle: 'Lifestyle',
       advantages_title: 'Why Work With Me?',
       stat1: 'Total Audience',
       stat2: 'Monthly Exposures',
@@ -101,23 +122,26 @@
       ],
       projects: [
         {
-          brand: 'LUXE Fashion Brand',
-          handle: '@LuxeStyle',
+          brand: 'LUXE Products Brand',
+          handle: '@Products',
           badge: '+30% Sales',
+          category: 'products',
           thumb: 'https://images.unsplash.com/photo-1483985988355-763728ad1994?w=400&h=500&fit=crop',
           video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
         },
         {
           brand: 'GLOW Beauty',
-          handle: '@GlowBeauty',
+          handle: '@Products',
           badge: '100K Views',
+          category: 'lifestyle',
           thumb: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop',
           video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
         },
         {
           brand: 'URBAN BREW Coffee',
-          handle: '@UrbanBrew',
+          handle: '@HomeCleaning',
           badge: '+45% Engagement',
+          category: 'lifestyle',
           thumb: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=500&fit=crop',
           video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
         },
@@ -125,8 +149,17 @@
           brand: 'FOOD CORNER',
           handle: '@FoodCorner',
           badge: '1M+ Reels Views',
+          category: 'lifestyle',
           thumb: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=500&fit=crop',
           video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
+        },
+        {
+          brand: 'CLEAN PRO',
+          handle: '@CleanPro',
+          badge: '+60% Conversions',
+          category: 'cleaning',
+          thumb: 'https://images.unsplash.com/photo-1585421516928-4e1f2a1b3f86?w=400&h=500&fit=crop',
+          video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
         }
       ]
     }
@@ -140,6 +173,7 @@
   ];
 
   let currentLang = 'he';
+  let currentPortfolioFilter = 'all';
 
   const portfolioGrid = document.getElementById('portfolioGrid');
   const advantagesGrid = document.getElementById('advantagesGrid');
@@ -166,7 +200,7 @@
     }, 2500);
   }
 
-  function copyEmailToClipboard() {
+  copyEmailBtn.addEventListener('click', function () {
     const email = copyEmailBtn.getAttribute('data-email');
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -177,7 +211,7 @@
     } else {
       fallbackCopyEmail(email);
     }
-  }
+  });
 
   function fallbackCopyEmail(email) {
     const textarea = document.createElement('textarea');
@@ -201,13 +235,66 @@
     document.getElementById('ctaWhatsapp').href = buildWhatsAppUrl(t.waMessage);
   }
 
+  function applyPortfolioFilter(selectedFilter) {
+    const cards = portfolioGrid.querySelectorAll('.portfolio-card');
+
+    cards.forEach(function (card) {
+      const cardCategory = card.getAttribute('data-category');
+
+      if (selectedFilter === 'all' || cardCategory === selectedFilter) {
+        card.classList.remove('is-hidden');
+        setTimeout(function () {
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        }, 10);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.95)';
+        card.classList.add('is-hidden');
+      }
+    });
+  }
+
+  function initPortfolioFilters() {
+    document.querySelectorAll('.filter-btn').forEach(function (button) {
+      button.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+          btn.classList.remove('active');
+        });
+        button.classList.add('active');
+        currentPortfolioFilter = button.getAttribute('data-filter');
+        applyPortfolioFilter(currentPortfolioFilter);
+      });
+    });
+  }
+
+  function optimizeCloudinaryUrl(url) {
+    if (!url || !url.includes('cloudinary.com') || url.includes('f_auto')) {
+      return url;
+    }
+
+    if (url.includes('/video/upload/')) {
+      return url.replace('/video/upload/', '/video/upload/f_auto,q_auto/');
+    }
+
+    if (url.includes('/image/upload/')) {
+      return url.replace('/image/upload/', '/image/upload/f_auto,q_auto/');
+    }
+
+    if (url.includes('/upload/')) {
+      return url.replace('/upload/', '/upload/f_auto,q_auto/');
+    }
+
+    return url;
+  }
+
   function renderPortfolio() {
     const projects = i18n[currentLang].projects;
     portfolioGrid.innerHTML = projects.map(function (p, i) {
       return (
-        '<article class="portfolio-card" data-index="' + i + '" tabindex="0" role="button" aria-label="' + p.brand + '">' +
+        '<article class="portfolio-card" data-index="' + i + '" data-category="' + p.category + '" tabindex="0" role="button" aria-label="' + p.brand + '">' +
           '<div class="card-thumb">' +
-            '<img src="' + p.thumb + '" alt="' + p.brand + '" loading="lazy">' +
+            '<img src="' + optimizeCloudinaryUrl(p.thumb) + '" alt="' + p.brand + '" loading="lazy">' +
             '<div class="card-play">' +
               '<div class="card-play-icon">' +
                 '<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>' +
@@ -232,6 +319,8 @@
         }
       });
     });
+
+    applyPortfolioFilter(currentPortfolioFilter);
   }
 
   function renderAdvantages() {
@@ -271,19 +360,7 @@
     renderAdvantages();
     updateWhatsAppLinks();
 
-    if (!toastNotification.classList.contains('toast-show')) {
-      toastNotification.textContent = t.emailCopied;
-    }
-
     try { localStorage.setItem('michal-lang', lang); } catch (e) {}
-  }
-
-  function optimizeCloudinaryUrl(url) {
-    var videoUrl = url;
-    if (videoUrl.includes('cloudinary.com') && videoUrl.includes('/upload/') && !videoUrl.includes('f_auto')) {
-      videoUrl = videoUrl.replace('/upload/', '/upload/f_auto,q_auto/');
-    }
-    return videoUrl;
   }
 
   function openModal() {
@@ -327,9 +404,8 @@
     if (e.key === 'Escape' && videoModal.classList.contains('active')) closeModal();
   });
 
-  copyEmailBtn.addEventListener('click', copyEmailToClipboard);
-
   var saved = null;
   try { saved = localStorage.getItem('michal-lang'); } catch (e) {}
+  initPortfolioFilters();
   setLanguage(saved === 'en' ? 'en' : 'he');
 })();

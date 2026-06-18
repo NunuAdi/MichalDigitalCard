@@ -58,7 +58,7 @@
         </button>
       </div>
 
-      <div id="toast-notification" aria-live="polite">מייל הועתק בהצלחה! ✨</div>
+      <div id="toast-notification" aria-live="polite"></div>
     </section>
 
     <!-- Tagline & About -->
@@ -74,6 +74,12 @@
     <!-- Portfolio Grid -->
     <section class="portfolio-section">
       <h2 class="section-title" data-i18n="portfolioTitle">תיק העבודות שלי</h2>
+      <div class="portfolio-filters" id="portfolioFilters">
+        <button class="filter-btn active" data-filter="all" type="button" data-i18n="filterAll">הכל</button>
+        <button class="filter-btn" data-filter="products" type="button" data-i18n="filterProducts">מוצרים</button>
+        <button class="filter-btn" data-filter="cleaning" type="button" data-i18n="filterCleaning">ניקיון</button>
+        <button class="filter-btn" data-filter="lifestyle" type="button" data-i18n="filterLifestyle">פנאי</button>
+      </div>
       <div class="portfolio-grid" id="portfolioGrid"></div>
     </section>
 
