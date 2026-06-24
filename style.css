@@ -21,11 +21,29 @@
   --shadow-lg: 0 16px 48px rgba(26, 26, 31, 0.12);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --font: 'Heebo', 'Outfit', system-ui, sans-serif;
+  --font-he: 'Heebo', 'Outfit', system-ui, sans-serif;
+  --font-en: 'Outfit', 'Heebo', system-ui, sans-serif;
+  --font: var(--font-he);
 }
 
-[dir="ltr"] {
-  --font: 'Outfit', 'Heebo', system-ui, sans-serif;
+.lang-he,
+.lang-he .app {
+  --font: var(--font-he);
+}
+
+.lang-en,
+.lang-en .app {
+  --font: var(--font-en);
+}
+
+[dir="ltr"],
+.lang-en {
+  --font: var(--font-en);
+}
+
+[dir="rtl"],
+.lang-he {
+  --font: var(--font-he);
 }
 
 *, *::before, *::after {
@@ -47,6 +65,7 @@ body {
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
+  text-align: start;
 }
 
 /* ── Sticky Language Header ── */
@@ -181,8 +200,10 @@ body {
   font-weight: 800;
   color: var(--dark);
   letter-spacing: -0.02em;
-  margin-bottom: 6px;
+  margin-block-end: 6px;
   line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .profile-title {
@@ -190,8 +211,10 @@ body {
   font-weight: 500;
   color: var(--text-muted);
   max-width: 320px;
-  margin: 0 auto 20px;
+  margin-block: 0 20px;
+  margin-inline: auto;
   line-height: 1.5;
+  text-align: center;
 }
 
 .social-row {
@@ -243,8 +266,10 @@ body {
   font-weight: 700;
   color: var(--dark);
   line-height: 1.45;
-  margin-bottom: 16px;
-  padding: 0 4px;
+  margin-block-end: 16px;
+  padding-inline: 4px;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .about-text {
@@ -252,8 +277,11 @@ body {
   color: var(--text-muted);
   line-height: 1.7;
   max-width: 400px;
-  margin: 0 auto;
+  margin-inline: auto;
+  margin-block: 0;
   font-weight: 400;
+  text-align: center;
+  text-wrap: pretty;
 }
 
 /* ── Section Titles ── */
@@ -280,12 +308,16 @@ body {
 }
 
 .portfolio-filters {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 0 auto 28px auto;
-  padding: 6px 12px;
+  margin-block: 0 28px;
+  margin-inline: auto;
+  padding-block: 6px;
+  padding-inline: 12px;
+  max-width: 100%;
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -299,15 +331,17 @@ body {
   color: #1e1b4b;
   border: none;
   outline: none;
-  padding: 8px 22px;
+  padding-block: 8px;
+  padding-inline: 18px;
   border-radius: 50px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   font-family: var(--font);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
+  flex: 0 1 auto;
 }
 
 .filter-btn.active {
@@ -399,8 +433,9 @@ body {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--dark);
-  margin-bottom: 2px;
+  margin-block-end: 2px;
   line-height: 1.3;
+  overflow-wrap: anywhere;
 }
 
 .card-handle {
@@ -408,8 +443,9 @@ body {
   color: var(--accent);
   font-weight: 600;
   display: block;
-  margin-bottom: 8px;
+  margin-block-end: 8px;
   direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .card-badge {
@@ -470,24 +506,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   width: 100%;
-  direction: rtl;
 }
 
 .modal-title {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--dark);
-  text-align: right;
-}
-
-[dir="ltr"] .modal-header {
-  direction: ltr;
-  flex-direction: row-reverse;
-}
-
-[dir="ltr"] .modal-title {
-  text-align: left;
+  text-align: start;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .modal-close {
@@ -572,12 +602,14 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 16px 18px;
+  padding-block: 16px;
+  padding-inline: 18px;
   background: var(--white);
   border: 1px solid var(--pink-100);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  text-align: start;
 }
 
 .advantage-card:hover {
@@ -607,6 +639,7 @@ body {
 .advantage-content {
   flex: 1;
   min-width: 0;
+  text-align: start;
 }
 
 .advantage-title {
@@ -614,7 +647,8 @@ body {
   font-weight: 700;
   color: var(--dark);
   line-height: 1.35;
-  margin-bottom: 4px;
+  margin-block-end: 4px;
+  overflow-wrap: anywhere;
 }
 
 .advantage-desc {
@@ -622,6 +656,7 @@ body {
   font-weight: 500;
   color: var(--text-muted);
   line-height: 1.45;
+  text-wrap: pretty;
 }
 
 /* ── Stats ── */
@@ -668,8 +703,10 @@ body {
   font-size: 0.78rem;
   font-weight: 600;
   color: #5c4a52;
-  margin-top: 10px;
+  margin-block-start: 10px;
   line-height: 1.35;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* ── CTA Footer ── */
@@ -685,7 +722,9 @@ body {
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--dark);
-  margin-bottom: 20px;
+  margin-block-end: 20px;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .cta-buttons {
@@ -780,6 +819,15 @@ body {
   100% { transform: translateX(220%) skewX(-18deg); }
 }
 
+[dir="rtl"] .cta-btn-shimmer {
+  animation-name: shimmer-rtl;
+}
+
+@keyframes shimmer-rtl {
+  0% { transform: translateX(120%) skewX(18deg); }
+  100% { transform: translateX(-220%) skewX(18deg); }
+}
+
 .whatsapp-png-icon {
   position: relative;
   z-index: 1;
@@ -806,19 +854,28 @@ body {
   flex-direction: row;
 }
 
+/* ── Centered sections (direction-agnostic) ── */
+.profile-header,
+.about-section,
+.portfolio-section,
+.stats-section,
+.cta-section,
+.section-title {
+  text-align: center;
+}
+
 /* ── RTL / LTR Logical Adjustments ── */
-[dir="rtl"] .advantage-card,
-[dir="rtl"] .advantage-content {
-  text-align: right;
-}
-
-[dir="ltr"] .advantage-card,
-[dir="ltr"] .advantage-content {
-  text-align: left;
-}
-
 [dir="ltr"] .card-play-icon svg {
   margin-inline-start: 3px;
+}
+
+[dir="rtl"] .card-play-icon svg {
+  margin-inline-start: 2px;
+}
+
+.lang-en .filter-btn {
+  font-size: 0.85rem;
+  padding-inline: 14px;
 }
 
 /* ── Responsive ── */
@@ -839,7 +896,8 @@ body {
   }
 
   .card-body {
-    padding: 10px 8px 12px;
+    padding-block: 10px 12px;
+    padding-inline: 8px;
   }
 
   .stats-grid {
@@ -848,6 +906,22 @@ body {
 
   .stat-label {
     font-size: 0.7rem;
+  }
+
+  .filter-btn {
+    padding-inline: 12px;
+    font-size: 0.8rem;
+  }
+
+  .portfolio-filters {
+    gap: 6px;
+    padding-inline: 8px;
+    border-radius: 20px;
+  }
+
+  .lang-en .filter-btn {
+    font-size: 0.75rem;
+    padding-inline: 10px;
   }
 }
 
@@ -864,11 +938,13 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  max-width: fit-content;
-  margin: 12px auto 0 auto;
+  max-width: min(100%, 320px);
+  margin-block: 12px 0;
+  margin-inline: auto;
   background: rgba(255, 255, 255, 0.95);
   color: #4a044e;
-  padding: 8px 18px;
+  padding-block: 8px;
+  padding-inline: 18px;
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(217, 70, 239, 0.1);
   border: 1px solid rgba(247, 207, 223, 0.6);
@@ -876,7 +952,8 @@ body {
   font-size: 0.9rem;
   font-family: var(--font);
   z-index: 10;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.2s ease, transform 0.2s ease;
