@@ -113,6 +113,17 @@
       badge_he: '+45% מעורבות',
       badge_en: '+45% Engagement',
       video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1781728783/%D7%90%D7%A8%D7%95%D7%97%D7%AA_%D7%A6%D7%94%D7%A8%D7%99%D7%99%D7%9D_ykyd3i.mp4'
+    },
+    {
+      id: 11,
+      image: './assets/Food-4.png',
+      category: 'lifestyle',
+      handle: '@lifestyle',
+      title_he: 'אושי אושי - סושי ובר',
+      title_en: 'Oshi Oshi - Sushi & Bar',
+      badge_he: '+75% מעורבות',
+      badge_en: '+75% Engagement',
+      video: 'https://res.cloudinary.com/dqcnb2bdy/video/upload/v1782312058/oshiOshi_isbjt8.mp4'
     }
   ];
 
